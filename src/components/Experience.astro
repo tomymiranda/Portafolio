@@ -1,0 +1,44 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Marzo 2024 - Actualidad",
+    title: "Desarrollador Full Stack",
+    company: "Lemondata",
+    description:
+      "Desarrollo de páginas web, armado de componentes, consultas a bases de datos, modelado de datos, diseño de funciones e integración con backend. Deploy de aplicaciones front y back, desarrollo de microservicios y actualización de documentación. Tecnologías: VueJS, Quasar, NodeJS, JavaScript, Axios, MongoDB, Java, GitLab, Docker y Postman. Metodología: Scrum y Kanban.",
+    link: "https://lemondata.com.ar",
+  },
+  {
+    date: "Julio 2022 - Marzo 2024",
+    title: "Auxiliar Administrativo",
+    company: "Ministerio de Desarrollo Social de la Nación",
+    description:
+      "Armado de expedientes, revisión de documentación, creación de planillas en Excel y consultas SQL.",
+  },
+  {
+    date: "Octubre 2021 - Abril 2023",
+    title: "Desarrollador Full Stack",
+    company: "ADOX",
+    description:
+      "Consultas SQL, testeo de aplicaciones, modelado de datos, maquetado y diseño de páginas web y componentes. Planificación de proyectos, armado de casos de uso y documentación. Tecnologías: ReactJS, NodeJS, JavaScript, Axios, MongoDB, NextJS, GitHub, SwaggerUI y Figma. Metodología: Scrum y Kanban.",
+  },
+  {
+    date: "Enero 2019 - Febrero 2019",
+    title: "Analista de Marketing Jr",
+    company: "Telefónica",
+    description:
+      "Consultas a bases de datos y pruebas de regresión para la aplicación AURA.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

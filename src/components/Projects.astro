@@ -1,0 +1,107 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NodeJS from "./icons/NodeJs.astro"
+import ReactJS from "./icons/ReactJs.astro"
+import VueJS from "./icons/VueJs.astro"
+import Java from "./icons/Java.astro"
+import Docker from "./icons/Docker.astro"
+import LinkButton from "./LinkButtom.astro"
+import Link from "./icons/Link.astro"
+
+const TAGS = {
+  VUE: {
+    name: "Vue.js",
+    class: "bg-green-500 text-white",
+    icon: VueJS,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-gray-700 text-white",
+    icon: NodeJS,
+  },
+  REACT: {
+    name: "React.js",
+    class: "bg-blue-500 text-white",
+    icon: ReactJS,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-orange-500 text-white",
+    icon: Java,
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-blue-600 text-white",
+    icon: Docker,
+  },
+}
+
+const PROJECTS = [
+  {
+    title: "Plataforma de Monitoreo Ambiental",
+    description:
+      "Sistema innovador para control de medidores de CO2, temperatura y humedad. Desarrollo de frontend, backend y base de datos. Integración con APIs y microservicios. Utiliza React.js, Node.js, y Docker.",
+    link: "https://adox.com/proyectos",
+    github: "https://github.com/adox/proyecto-control",
+    image: "/projects/adox.webp",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.DOCKER],
+  },
+  {
+    title: "Sistema AURA",
+    description:
+      "Participación en el desarrollo de la plataforma AURA. Realización de consultas SQL, pruebas de regresión y soporte técnico. Trabajo en optimización de bases de datos.",
+    link: "https://aura.telefonica.com/",
+    image: "/projects/aura.webp",
+    tags: [TAGS.JAVA],
+  },
+  {
+    title: "Aplicativo de Reacudaciones",
+    description:
+      "Aplicación web para visualizar los datos de recaudaciones obtenidas de AGIP en la Ciudad de Buenos Aires. Desarrollé el frontend, backend y un microservicio para consultar la base de datos del cliente, utilizando Vue.js, Quasar, Node.js y MongoDB. La plataforma permite acceder a la información de manera eficiente y estructurada, optimizando la gestión de datos financieros.",
+    link: "https://lemondata.com.ar",
+    github: "https://github.com/lemondata/proyectos",
+    image: "/projects/lemondata.webp",
+    tags: [TAGS.VUE, TAGS.NODE, TAGS.DOCKER],
+  },
+  {
+    title: "Sistema Sondaggio",
+    description:
+      "Aplicación web para encuestas y votaciones interactivas. Desarrollé tanto el frontend como el backend, utilizando Vue.js, Quasar, Node.js y MongoDB. La plataforma permite a los usuarios crear encuestas en tiempo real e interactuar con el público de manera dinámica.",
+    link: "https://lemondata.com.ar",
+    github: "https://github.com/lemondata/proyectos",
+    image: "/projects/lemondata.webp",
+    tags: [TAGS.VUE, TAGS.NODE, TAGS.DOCKER],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+
+  <div class="w-full md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
